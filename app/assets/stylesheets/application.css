@@ -8,3 +8,109 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+body {
+  background-color: #990000;
+  color: white;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Page shell */
+.page {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 80px 64px;
+}
+
+.page--center {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 28vh;
+}
+
+/* Waiting-list form */
+.waitlist {
+  max-width: 280px;
+  margin-left: 40px;
+}
+
+.waitlist__title {
+  margin: 0 0 40px;
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.field {
+  margin-bottom: 28px;
+}
+
+.field__label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field__input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 6px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #9fb0f5;
+  color: white;
+  font-size: 16px;
+}
+
+.field__input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.field__error {
+  min-height: 1.1em;
+  margin-top: 8px;
+  color: #ffd0d0;
+  font-size: 13px;
+}
+
+/* Pill submit button */
+.btn {
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 16px;
+  padding: 18px 44px;
+  background: #f1eefb;
+  color: #1e1b4b;
+  border: none;
+  /* Pill with a squared-off bottom-left corner (top-left, top-right, bottom-right, bottom-left) */
+  border-radius: 999px 999px 999px 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Server-side error summary */
+.form-errors {
+  margin-bottom: 24px;
+  color: #ffd0d0;
+  font-size: 14px;
+}
+
+.form-errors p {
+  margin: 4px 0;
+}
+
+/* Thank-you page */
+.thank-you {
+  font-size: 44px;
+  font-weight: 800;
+}

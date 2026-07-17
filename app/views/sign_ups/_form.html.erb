@@ -1,26 +1,26 @@
 <%= form_with(model: user, url: sign_up_path, data: { controller: "email-validation" }) do |form| %>
   <% if user.errors.any? %>
-    <div>
+    <div class="form-errors">
       <% user.errors.each do |error| %>
         <p><%= error.full_message %></p>
       <% end %>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :email, "Your email" %>
-    <%= form.email_field :email, placeholder: "Email",
+  <div class="field">
+    <%= form.label :email, "Your email", class: "field__label" %>
+    <%= form.email_field :email, placeholder: "Email", class: "field__input",
           data: {
             email_validation_target: "email",
             action: "blur->email-validation#validate input->email-validation#validate"
           } %>
-    <div data-email-validation-target="message"></div>
+    <div class="field__error" data-email-validation-target="message"></div>
   </div>
 
-  <div>
-    <%= form.label :name, "Your name" %>
-    <%= form.text_field :name, placeholder: "Name" %>
+  <div class="field">
+    <%= form.label :name, "Your name", class: "field__label" %>
+    <%= form.text_field :name, placeholder: "Name", class: "field__input" %>
   </div>
 
-  <%= form.submit "Join the waiting list", data: { email_validation_target: "submit" } %>
+  <%= form.submit "Join the waiting list", class: "btn", data: { email_validation_target: "submit" } %>
 <% end %>

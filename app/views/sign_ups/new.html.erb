@@ -1,5 +1,8 @@
 <% content_for :title, "Coming soon" %>
 
-<h1>Coming soon</h1>
-
-<%= render "form", user: @user %>
+<div class="page">
+  <div class="waitlist">
+    <h1 class="waitlist__title">Coming soon</h1>
+    <%= render "form", user: @user %>
+  </div>
+</div>
