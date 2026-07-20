@@ -59,11 +59,7 @@ ruby lib/scripts/6_sum_digits.rb 31337
 - `4_SQL` — SQL query answers; run them against a `salaries` table in any
   Postgres client, e.g. `psql -f lib/scripts/4_SQL`.
 - `5_sum.js` — defines `f` so that `f(1, 5)` and `f(1)(5)` both return `6`.
-  Run it with Node:
-
-  ```bash
-  node -e 'const f=require("./lib/scripts/5_sum.js"); console.log(f(1,5), f(1)(5))'
-  ```
+  It only defines the function.
 
 ## CI
 
