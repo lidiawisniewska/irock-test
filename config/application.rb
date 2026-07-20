@@ -26,7 +26,10 @@ module IrockTest
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    # `scripts` holds standalone exercise scripts whose filenames (e.g.
+    # `2_fizz_buzz.rb`) don't map to valid Ruby constant names, so keep them
+    # out of the autoloader/eager-load path.
+    config.autoload_lib(ignore: %w[assets tasks scripts])
 
     # Configuration for the application, engines, and railties goes here.
     #
