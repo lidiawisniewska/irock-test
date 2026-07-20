@@ -1,0 +1,16 @@
+-- There is a salaries table, and it has the following columns: employee_id, organisation_id, amount, date (each employee can have more than one salary depending on date).
+
+-- a. Find a maximum salary for each employee in SQL.
+
+SELECT employee_id, MAX(amount) AS max_salary
+
+FROM salaries
+GROUP BY employee_id
+
+
+-- b. Find an average salary for each organisation in SQL.
+
+SELECT organisation_id, AVG(amount) AS avg_salary
+
+FROM salaries
+GROUP BY organisation_id
