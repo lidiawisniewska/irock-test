@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :sign_up, only: [:new, :create]
+  resource :sign_up, only: [ :new, :create ]
   get "thank_you", to: "sign_ups#thank_you", as: :thank_you
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

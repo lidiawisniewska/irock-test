@@ -31,7 +31,7 @@ class SignUpsController < ApplicationController
     # True when the *only* reason the record is invalid is that the email is
     # already taken — i.e. the email itself is well-formed, just a repeat.
     def already_on_waiting_list?(user)
-      user.errors.of_kind?(:email, :taken) && user.errors.attribute_names == [:email]
+      user.errors.of_kind?(:email, :taken) && user.errors.attribute_names == [ :email ]
     end
 
     # Only allow a list of trusted parameters through.
