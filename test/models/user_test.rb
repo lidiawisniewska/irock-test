@@ -40,6 +40,11 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "carol@example.com", user.email
   end
 
+  test "downcases the email so uniqueness holds at the database level" do
+    user = User.new(name: "Carol", email: "Carol@Example.COM")
+    assert_equal "carol@example.com", user.email
+  end
+
   test "a padded email still collides with an existing record" do
     duplicate = User.new(name: "Not Alice", email: "  #{users(:one).email}  ")
     assert_not duplicate.valid?
