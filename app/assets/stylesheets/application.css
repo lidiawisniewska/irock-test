@@ -33,7 +33,7 @@ body {
 /* Waiting-list form */
 .waitlist {
   max-width: 280px;
-  margin-left: 40px;
+  margin: 0 auto;
 }
 
 .waitlist__title {
