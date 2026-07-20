@@ -5,6 +5,12 @@ class UserTest < ActiveSupport::TestCase
     assert User.new(name: "Carol", email: "carol@example.com").valid?
   end
 
+  test "is invalid without a name" do
+    user = User.new(name: "", email: "carol@example.com")
+    assert_not user.valid?
+    assert_includes user.errors[:name], "can't be blank"
+  end
+
   test "is invalid without an email" do
     user = User.new(name: "Carol", email: "")
     assert_not user.valid?

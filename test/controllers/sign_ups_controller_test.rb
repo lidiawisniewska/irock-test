@@ -54,6 +54,14 @@ class SignUpsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to thank_you_path
   end
 
+  test "missing name re-renders the form instead of erroring" do
+    assert_no_difference("User.count") do
+      post sign_up_url, params: { user: { email: "noname@example.com" } }
+    end
+
+    assert_response :unprocessable_content
+  end
+
   test "blank email re-renders the form and creates nothing" do
     assert_no_difference("User.count") do
       post sign_up_url, params: { user: { email: "", name: "No Email" } }
